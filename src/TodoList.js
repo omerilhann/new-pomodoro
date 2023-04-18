@@ -10,7 +10,9 @@ function TodoList(props) {
           style={{ color: todo.color }}
         >
           <span onClick={() => props.onToggleCompleted(index)}>
-            {todo.text}
+            {todo.text} <div class="icon-container">
+<img src="dog-icon.png" alt="dog icon" class="icon"/>
+</div>
           </span>
           <button onClick={() => props.onDelete(index)}>Delete</button>
         </li>

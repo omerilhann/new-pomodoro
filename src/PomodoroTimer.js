@@ -41,6 +41,9 @@ function PomodoroTimer() {
   return (
     <div>
       <h2>Pomodoro Timer</h2>
+      <div class="icon-container">
+<img src="dog-icon.png" alt="dog icon" class="icon"/>
+</div>
       <div>{formatTime(time)}</div>
       <button onClick={startTimer}>Start</button>
       <button onClick={stopTimer}>Stop</button>

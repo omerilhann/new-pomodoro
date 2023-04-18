@@ -62,6 +62,10 @@ function App() {
             <button onClick={handleStart}>Start</button>
           )}
           <button onClick={handleReset}>Reset</button>
+
+          <div class="icon-container">
+<img src="dog-icon.png" alt="dog icon" class="icon"/>
+</div>
         </div>
       </div>
     </div>
