@@ -1,32 +1,21 @@
-import React, { useState } from 'react';
+import React from "react";
 
-function TodoList() {
-  const [items, setItems] = useState([]);
-
-  function addItem() {
-    const newItem = prompt('Enter a new item:');
-    setItems([...items, newItem]);
-  }
-
-  function removeItem(index) {
-    const newItems = [...items];
-    newItems.splice(index, 1);
-    setItems(newItems);
-  }
-
+function TodoList(props) {
   return (
-    <div>
-      <h2>To-Do List</h2>
-      <ul>
-        {items.map((item, index) => (
-          <li key={index}>
-            {item}
-            <button onClick={() => removeItem(index)}>Remove</button>
-          </li>
-        ))}
-      </ul>
-      <button onClick={addItem}>Add Item</button>
-    </div>
+    <ul className="todo-list">
+      {props.todos.map((todo, index) => (
+        <li
+          key={index}
+          className={todo.completed ? "completed" : ""}
+          style={{ color: todo.color }}
+        >
+          <span onClick={() => props.onToggleCompleted(index)}>
+            {todo.text}
+          </span>
+          <button onClick={() => props.onDelete(index)}>Delete</button>
+        </li>
+      ))}
+    </ul>
   );
 }
 
